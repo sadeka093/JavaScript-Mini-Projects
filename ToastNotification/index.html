@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="container"></div>
+<button id="btn">Click me preety please</button>
+<script type="text/javascript">
+	const container	= document.getElementById('container');
+	const btn = document.getElementById('btn');
+
+	btn.addEventListener("click",()=>{
+         createNotification();
+	});
+
+	function createNotification()
+	{
+		const notf= document.createElement('div');
+
+		notf.classList.add('toast');
+		notf.innerText="This is crazy";
+
+		container.appendChild(notf);
+
+		setTimeout(()=>{
+			notf.remove();
+		}, 3000);
+	}
+</script>
+</body>
+</html>
