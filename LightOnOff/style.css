@@ -1,0 +1,12 @@
+body{
+	background-color: #a89ebf;
+}
+img{
+	height: 200px;
+}
+button{
+	padding:5px;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 15px;
+}
