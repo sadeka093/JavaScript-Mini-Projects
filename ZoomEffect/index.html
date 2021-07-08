@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="container">
+	<img src="images/kitty.png">
+</div>
+<script type="text/javascript">
+	const container = document.getElementById('container');
+	const img = document.querySelector("img");
+	container.addEventListener("mousemove",(e)=>{
+		/*console.log(e.clientX,e.clientY);*/
+		/*console.log(e.target.offsetLeft,e.target.offsetTop);*/
+
+		const x= e.clientX-e.target.offsetLeft;
+		const y= e.clientY-e.target.offsetTop;
+
+		/*console.log("e.clientX="+e.clientX,"e.clientY="+e.clientY,"e.target.offsetLeft="+e.target.offsetLeft,"e.target.offsetTop="+e.target.offsetTop,"x="+x,"y="+y);
+*/
+		img.style.transformOrigin= `${x}px ${y}px`;
+		img.style.transform= "scale(2)";
+	});
+
+container.addEventListener("mouseleave", () => {
+    img.style.transformOrigin = "center center";
+    img.style.transform = "scale(1)";
+});
+
+</script>
+</body>
+</html>
