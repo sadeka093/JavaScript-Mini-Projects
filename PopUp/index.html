@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<button id="open">Open</button>
+<div class="popup-container" id="container">
+	<div class="popup">
+		<button id="close">&times;</button>
+		<h1>Youtube</h1>
+		<p> popup message</p>
+	</div>
+</div>
+<script type="text/javascript">
+	const open=document.getElementById('open');
+	const close=document.getElementById('close');
+	const container=document.getElementById('container');
+
+	open.addEventListener("click",()=>{
+       container.classList.add("active");
+	});
+	close.addEventListener("click",()=>{
+       container.classList.remove("active");
+	});
+</script>
+</body>
+</html>
