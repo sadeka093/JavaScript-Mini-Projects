@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<audio id="applause" src="sounds/applause.mp3"></audio>
+<audio id="boo" src="sounds/boo.mp3"></audio>
+<audio id="gasp" src="sounds/gasp.mp3"></audio>
+<audio id="tada" src="sounds/tada.mp3"></audio>
+<audio id="victory" src="sounds/victory.mp3"></audio>
+<audio id="wrong" src="sounds/wrong.mp3"></audio>
+</body>
+<script type="">
+	const sounds =["applause","boo","gasp","tada","victory","wrong"];
+	sounds.forEach((sound)=>{
+		const btn=document.createElement("button");
+		btn.classList.add("btn");
+		btn.innerText=sound;
+		btn.addEventListener("click",()=>{
+			stopSongs();
+
+			document.getElementById(sound).play();
+		});
+		document.body.appendChild(btn);
+	});
+
+	function stopSongs()
+	{
+		sounds.forEach((sound)=>{
+			const song=document.getElementById(sound);
+
+			song.pause();
+			song.currentTime=0;
+		});
+	}
+</script>
+</html>
